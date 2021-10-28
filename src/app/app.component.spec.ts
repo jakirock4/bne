@@ -29,7 +29,7 @@ describe('AppComponent', () => {
         fixture.detectChanges();
         const compiled = fixture.nativeElement as HTMLElement;
         expect(compiled.querySelector('h1')?.textContent).toContain(
-            'Web Componentes with Stencil & Angular'
+            'Web Componentes with Stencil and Angular'
         );
     });
 });
