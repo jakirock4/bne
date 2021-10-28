@@ -68,8 +68,7 @@
   "lint-staged": {
     "*.{js,css,scss,ts,html}": [
       "prettier --write",
-      "eslint --fix",
-      "ng test --no-watch"
+      "eslint --fix"
     ]
   }
 }
