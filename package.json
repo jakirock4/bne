@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "prepare": "husky install",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -25,15 +27,23 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.8",
+    "@angular-eslint/builder": "12.6.1",
+    "@angular-eslint/eslint-plugin": "12.6.1",
+    "@angular-eslint/eslint-plugin-template": "12.6.1",
+    "@angular-eslint/schematics": "12.6.1",
+    "@angular-eslint/template-parser": "12.6.1",
     "@angular-extensions/lint-rules": "^1.2.1",
     "@angular/cli": "~12.2.8",
     "@angular/compiler-cli": "~12.2.0",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "4.28.2",
+    "@typescript-eslint/parser": "4.28.2",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.26.0",
     "git-cz": "^4.8.0",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -48,7 +58,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && ng lint && ng test && git add .",
+      "pre-commit": "pretty-quick --staged && ng lint && ng test --no-watch && git add .",
       "pre-push": "ng build --aot true"
     }
   },
