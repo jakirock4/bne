@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-pretty-quick --staged && ng lint && ng test --no-watch && git add .
+pretty-quick --staged && npx lint-staged && ng test --no-watch && git add .

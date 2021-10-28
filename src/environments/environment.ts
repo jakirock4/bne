@@ -2,8 +2,13 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const API_BASE = 'https://10.89.86.16:20005';
 export const environment = {
-  production: false
+    production: false,
+    env: 'DEV',
+    endpoints: {
+        API_BASE,
+    },
 };
 
 /*

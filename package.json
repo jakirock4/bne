@@ -9,7 +9,7 @@
     "test": "ng test",
     "commit": "git-cz",
     "prepare": "husky install",
-    "lint": "ng lint"
+    "lint": "prettier --check . && nng lint --fix"
   },
   "private": true,
   "dependencies": {
@@ -56,15 +56,15 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "~4.3.5"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && ng lint && ng test --no-watch && git add .",
-      "pre-push": "ng build --aot true"
-    }
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "lint-staged": {
+    "*.{js,css,scss,md,ts,html}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }
