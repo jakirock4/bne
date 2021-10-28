@@ -62,13 +62,14 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "git-cz"
     }
   },
   "lint-staged": {
     "*.{js,css,scss,ts,html}": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --fix",
+      "ng test --no-watch"
     ]
   }
 }
